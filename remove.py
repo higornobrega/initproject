@@ -1,4 +1,5 @@
 import sys
+import os
 from selenium import webdriver
 
 username = sys.argv[1]
@@ -7,6 +8,10 @@ reponame = sys.argv[3]
 
 browser = webdriver.Chrome()
 browser.get('http://github.com/login')
+
+
+def delfolder():
+    os.system("rm -Rf " + reponame)
 
 
 def remove():
@@ -31,8 +36,10 @@ def remove():
         '//*[@id="options_bucket"]/div[9]/ul/li[4]/details/details-dialog/div[3]/form/button')[0]
     python_button.click()
 
-    browser.get("https://github.com/" + username)
+    #browser.get("https://github.com/" + username)
+    browser.quit()
 
 
 if __name__ == "__main__":
     remove()
+    delfolder()
