@@ -1,3 +1,9 @@
+## Before we start
+
+The following project was tested in DeepinOS and its code base was created in MacOS. Maybe (or not) some modifications are necessary, in cases of SOs other than those two.
+
+That said, let's go.
+
 ## What I Do.
 
 I'm a small project that automates the creation of repositories on both the computer and the GitHub platform.
@@ -6,7 +12,7 @@ I'm a small project that automates the creation of repositories on both the comp
 
 - Python 3.x
   - Selenium (available on pip)
-    - webdriver (Chrome)
+    - webdriver (module to be used)
   - Sys (native)
   - Os (native)
 
@@ -17,20 +23,20 @@ I'm a small project that automates the creation of repositories on both the comp
 
 ## How to use
 
-- Into the folder
+- Into the folder, run:
   > `Python3 onfolder.py <arg1> <arg2> <arg3>`
 
   Where:
-  - arg1 = username
-  - arg2 = password
-  - arg3 = repository name
+  - arg1 = github username
+  - arg2 = github password
+  - arg3 = github repository name
 
-To start syncing your workspace, just sign in with Google in the menu.
+Ps1: In the chrome browser, you may need to install the [ChromeDriver](http://chromedriver.chromium.org/downloads) so that everything works fine.
 
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
+Ps2: Still not working perfectly well, the repositories are created, but the stop conditions have not yet been implemented.
 
-Base code in: [ProjectInitializationAutomation](https://github.com/KalleHallden/ProjectInitializationAutomation) 
-Made by: [KalleHallden](https://github.com/KalleHallden)
+Base code for this project in: [ProjectInitializationAutomation](https://github.com/KalleHallden/ProjectInitializationAutomation).
 
-Made with ❤.
+Made by: [KalleHallden](https://github.com/KalleHallden).
+
+`Made with ❤.`
