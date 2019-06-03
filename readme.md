@@ -1,3 +1,5 @@
+# Initializer Project Automation
+
 ## Before we start
 
 The following project was tested in DeepinOS and its code base was created in MacOS. Maybe (or not) some modifications are necessary, in cases of SOs other than those two.
@@ -24,10 +26,12 @@ I'm a small project that automates the creation of repositories on both the comp
 ## How to use
 
 (create)
+
 - Into the folder, run:
   > `Python3 onfolder.py <arg1> <arg2> <arg3>`
 
 (remove)
+
 - Into the folder, run:
   > `Python3 remove.py <arg1> <arg2> <arg3>`
 
