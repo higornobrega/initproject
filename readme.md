@@ -1,4 +1,4 @@
-# Initializer Project Automation
+# Automatic Project Laucher
 
 ## Before we start
 
