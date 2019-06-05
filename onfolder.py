@@ -27,14 +27,18 @@ os.system("git status")
 print("-"*15)
 
 # subpasso cria repositório
-c.create_(username, password, namefolder)
+return_ = c.create_(username, password, namefolder)
 
-# passos do git [2/2]
-print("-"*15)
-os.system("git commit -m 'initial commit'")
-os.system("git remote add origin git@github.com:silv4b/" + namefolder + ".git")
-os.system("git push -u origin master")
-print("-"*15)
+if (return_ == 1):
+    print("RETORNOU 1, ABORTADO!")
+else:
+    # CRIAR
+    # passos do git [2/2]
+    print("-"*15)
+    os.system("git commit -m 'initial commit'")
+    os.system("git remote add origin git@github.com:silv4b/" +
+              namefolder + ".git")
+    os.system("git push -u origin master")
+    print("-"*15)
 
-c.reload_(namefolder)
-
+    c.reload_(namefolder)
