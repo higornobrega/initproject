@@ -4,6 +4,12 @@
 
 The following project was tested in DeepinOS and its code base was created in MacOS. Maybe (or not) some modifications are necessary, in cases of SOs other than those two.
 
+> Update: This project has been **successfully tested** on **windows**, step settings below:
+> 
+> * Download [Chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=75.0.3770.8/) (At the time of this update the current version is at 75.0.*)
+> * Unzip and save to a new folder ( `C:\` preferably ).
+> * Set the path folder in the system environment variables ( `path` preferably ).
+
 That said, let's go.
 
 ## What I Do.
