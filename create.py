@@ -3,7 +3,9 @@ from selenium import webdriver
 
 browser = webdriver.Chrome()
 browser.implicitly_wait(5)  # seconds
-browser.get('http://github.com/login')
+if (browser.get('http://github.com/login')):
+    print("Carregou")
+
 
 
 def create_(username_, password_, reponame_):
@@ -32,6 +34,8 @@ def create_(username_, password_, reponame_):
         python_button.submit()
     return 0
 
+    browser.get('https://github.com/' + username_ + '/' + reponame_)
 
-def reload_(reponame_):
-    browser.get('https://github.com/silv4b/' + reponame_)
+
+def reload_(username_, reponame_):
+    browser.get('https://github.com/' + username_ + '/' + reponame_)
