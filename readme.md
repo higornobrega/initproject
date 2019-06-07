@@ -8,9 +8,9 @@
 
 The following project was tested in DeepinOS and its code base was created in MacOS. Maybe (or not) some modifications are necessary, in cases of SOs other than those two.
 
-🗘 **Warn1:** In the chrome browser, you need to install the [ChromeDriver](http://chromedriver.chromium.org/downloads) so that everything works fine.
+🗘 **Warn1:** In the Chrome browser, you need to install the [ChromeDriver](http://chromedriver.chromium.org/downloads) so that everything works fine.
 
-🗘 **Warn2:** In the chrome browser, you need to install the [geckodriver](https://github.com/mozilla/geckodriver) so that everything works fine.
+🗘 **Warn2:** In the Firefox browser, you need to install the [geckodriver](https://github.com/mozilla/geckodriver) so that everything works fine.
 
 🗘 **Warn3:** Still not working perfectly well, There are still **inconsistencies**.
 
