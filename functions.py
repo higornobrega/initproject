@@ -7,6 +7,8 @@ browser = webdriver.Chrome()
 browser.implicitly_wait(5)
 browser.get('http://github.com/login')
 
+caminho = '/home/bruno/Documents/Testes/'
+
 def login(username_, password_):
     try:
         python_button = browser.find_elements_by_xpath(
@@ -66,6 +68,10 @@ def remove(reponame_):
 
 def createoffline (reponame_):
     print("---> Criar pasta.")
+
+    reponame_ = caminho + reponame_
+    print("\n\t {} ".format(reponame_))
+
     if os.path.isdir(reponame_):
         print("------>Pasta já existe offline\n------>Cancelar!")
         browser.quit()
@@ -75,8 +81,7 @@ def createoffline (reponame_):
         print("---> Pasta criada")
 
     print("---> Into the folder: ", end="")
-    path = os.getcwd()
-    path = path + '/' + reponame_ + '/'
+    path = reponame_
     os.chdir(path)
     print(path + '\n')
 
