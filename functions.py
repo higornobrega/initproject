@@ -31,7 +31,7 @@ def login(username_, password_):
 def delfolder(reponame_):
     os.system("rm -Rf " + reponame_)
 
-def remove(reponame_):
+def verificarepo(reponame_):
     browser.get('https://github.com/silv4b?tab=repositories')
 
     python_button = browser.find_elements_by_xpath('//*[@id="your-repos-filter"]')[0]
@@ -41,21 +41,28 @@ def remove(reponame_):
         #print("Repositório não existe!")
         browser.quit()
         return 1
-    
-    browser.get('https://github.com/silv4b/' + reponame_ + '/settings')        
 
-    python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/summary')[0]
-    python_button.click()
+def remove(reponame_):
 
-    python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/details-dialog/div[3]/form/p/input')[0]
-    python_button.send_keys(reponame_)
+    if(verificarepo(reponame_) != 1):    
+        browser.get('https://github.com/silv4b/' + reponame_ + '/settings')        
 
-    python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/details-dialog/div[3]/form/button')[0]
-    python_button.click()
+        python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/summary')[0]
+        python_button.click()
 
-    browser.quit()
+        python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/details-dialog/div[3]/form/p/input')[0]
+        python_button.send_keys(reponame_)
 
-    # delfolder(reponame_)
+        python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/details-dialog/div[3]/form/button')[0]
+        python_button.click()
+
+        browser.quit()
+
+        delfolder(reponame_)
+
+        return
+    else:
+        return 1   
 
 def createoffline (reponame_):
     print("---> Criar pasta.")
