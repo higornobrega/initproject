@@ -45,23 +45,18 @@ I'm a small project that automates the creation of repositories on both the comp
   > `git clone https://github.com/silv4b/initproject.git`
 
 * Change the `path` in `funcions.py` to your repository path.
-
 ## How to use
 
-(create)
-
 * Into the folder, run:
-  > `Python3 onfolder.py <arg1> <arg2> <arg3>`
-
-(remove)
-
-* Into the folder, run:
-  > `Python3 remove.py <arg1> <arg2> <arg3>`
+  > `python3 makerepo.py <arg1> <arg2> <arg3> <action>`
 
   Where:
   * arg1 = github username
   * arg2 = github password
   * arg3 = github repository name
+  * action:
+    * `-c` to create bouth folder and repository
+    * `-d` to delete bouth folder and repository
 
 Base code for this project in: [ProjectInitializationAutomation](https://github.com/KalleHallden/ProjectInitializationAutomation).
 
