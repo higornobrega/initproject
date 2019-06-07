@@ -1,6 +1,7 @@
 import sys
 import os
 import os.path as osp
+import time
 from selenium import webdriver
 
 browser = webdriver.Chrome()
@@ -27,27 +28,37 @@ def login(username_, password_):
             browser.quit()
             return 2
     except:
-        print("\n\nUsuário: {} Logado!\n\n".format(username_))
+        #print("\n\nUsuário: {} Logado!\n\n".format(username_))
         return 1
 
-def delfolder(reponame_):
-    os.system("rm -Rf " + reponame_)
 
 def verificarepo(reponame_):
-    browser.get('https://github.com/silv4b?tab=repositories')
+    browser.get('https://github.com/silv4b/' + reponame_ + '/settings')
+    try:
+        if(browser.find_elements_by_xpath('/html/body/div[4]/main/div[1]/div[2]/img[1]')[0]):
+            print("Função: verificarepo(reponame_)")
+            print("\tRepositório não existe!")
+            return False # se não existir
+    except:
+        if(browser.find_elements_by_xpath('//*[@id="options_bucket"]')[0]):
+            print("Função: verificarepo(reponame_)")
+            print("\tRepositório existe!")
+            return True # se existir
 
-    python_button = browser.find_elements_by_xpath('//*[@id="your-repos-filter"]')[0]
-    python_button.send_keys(reponame_)
+def delfolder(reponame_):
+    reponame_ = caminho + reponame_
+    print("\n\t {} ".format(reponame_))
 
-    if(browser.find_elements_by_xpath('//*[@id="user-repositories-list"]/div[1]/div[1]')):
-        #print("Repositório não existe!")
-        browser.quit()
-        return 1
+    if os.path.isdir(reponame_):
+        print("------>Pasta existe offline\n------>Excluir!")
+        print("---> Into the folder: ", end="")
+        path = reponame_
+        os.chdir(path)
+        os.system("rm -Rf " + reponame_)
 
 def remove(reponame_):
-
-    if(verificarepo(reponame_) != 1):    
-        browser.get('https://github.com/silv4b/' + reponame_ + '/settings')        
+    if(verificarepo(reponame_) == True):
+        browser.get('https://github.com/silv4b/' + reponame_ + '/settings')
 
         python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/summary')[0]
         python_button.click()
@@ -58,13 +69,15 @@ def remove(reponame_):
         python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/details-dialog/div[3]/form/button')[0]
         python_button.click()
 
-        browser.quit()
+        #browser.quit()
 
         delfolder(reponame_)
 
-        return
+        browser.quit()
+
+        return True # excluiu do github
     else:
-        return 1   
+        return False # repositório  não existe
 
 def createoffline (reponame_):
     print("---> Criar pasta.")

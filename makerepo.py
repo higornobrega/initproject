@@ -16,9 +16,14 @@ if(return_ == 1):
             sys.exit()
         func.createonline(username, password, reponame)
         func.ligaremoto(username, reponame)
+    
     elif(action == "-d"):
-        if (func.remove(reponame) == 1):
-            print("Repositório não existe! CANCELADO")
+        if (func.remove(reponame) == True):
+            print("Main:\n\tRepositório existiu!")
             sys.exit()
-elif(return_ == 2):
+        else:
+            print("Main:\n\tRepositório nunca existiu!")
+            sys.exit()
+
+else:
     print("[ERRO AO LOGAR]")
