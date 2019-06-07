@@ -2,7 +2,17 @@
 
 ## Before we start
 
+> 🗘 ➞ Still working on it. 
+>
+> ✔ ➞ Working.
+
 The following project was tested in DeepinOS and its code base was created in MacOS. Maybe (or not) some modifications are necessary, in cases of SOs other than those two.
+
+🗘 **Warn1:** In the chrome browser, you need to install the [ChromeDriver](http://chromedriver.chromium.org/downloads) so that everything works fine.
+
+🗘 **Warn2:** In the chrome browser, you need to install the [geckodriver](https://github.com/mozilla/geckodriver) so that everything works fine.
+
+🗘 **Warn3:** Still not working perfectly well, There are still **inconsistencies**.
 
 > **🝰 New update:** This project has been **successfully tested** on **windows**, step settings below:
 >  
@@ -45,12 +55,6 @@ I'm a small project that automates the creation of repositories on both the comp
   - arg1 = github username
   - arg2 = github password
   - arg3 = github repository name
-
-🗘 Ps1: In the chrome browser, you need to install the [ChromeDriver](http://chromedriver.chromium.org/downloads) so that everything works fine.
-
-🗘 Ps2: In the chrome browser, you need to install the [geckodriver](https://github.com/mozilla/geckodriver) so that everything works fine.
-
-✔ Ps3: Still not working perfectly well, the repositories are created, but the stop conditions have not yet been implemented.
 
 Base code for this project in: [ProjectInitializationAutomation](https://github.com/KalleHallden/ProjectInitializationAutomation).
 
