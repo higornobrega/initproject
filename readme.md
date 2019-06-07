@@ -4,11 +4,11 @@
 
 The following project was tested in DeepinOS and its code base was created in MacOS. Maybe (or not) some modifications are necessary, in cases of SOs other than those two.
 
-> Update: This project has been **successfully tested** on **windows**, step settings below:
+> **🝰 New update:** This project has been **successfully tested** on **windows**, step settings below:
 >  
-> * Download [Chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=75.0.3770.8/) (At the time of this update the current version is at 75.0.*)
-> * Unzip and save to a new folder ( `C:\` preferably ).
-> * Set the path folder in the system environment variables ( `path` preferably ).
+> * Download [Chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=75.0.3770.8/). (At the time of this update the current version is at 75.0.*)
+> * Unzip and save to a new folder. ( `C:\Webdrivers` preferably ).
+> * Set the path folder in the system environment variables. ( `path` preferably ).
 
 That said, let's go.
 
@@ -46,9 +46,11 @@ I'm a small project that automates the creation of repositories on both the comp
   - arg2 = github password
   - arg3 = github repository name
 
-Ps1: In the chrome browser, you may need to install the [ChromeDriver](http://chromedriver.chromium.org/downloads) so that everything works fine.
+🗘 Ps1: In the chrome browser, you need to install the [ChromeDriver](http://chromedriver.chromium.org/downloads) so that everything works fine.
 
-Ps2: Still not working perfectly well, the repositories are created, but the stop conditions have not yet been implemented.
+🗘 Ps2: In the chrome browser, you need to install the [geckodriver](https://github.com/mozilla/geckodriver) so that everything works fine.
+
+✔ Ps3: Still not working perfectly well, the repositories are created, but the stop conditions have not yet been implemented.
 
 Base code for this project in: [ProjectInitializationAutomation](https://github.com/KalleHallden/ProjectInitializationAutomation).
 

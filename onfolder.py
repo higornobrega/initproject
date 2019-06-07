@@ -10,7 +10,9 @@ namefolder = sys.argv[3]
 return_ = c.create_(username, password, namefolder)
 
 if (return_ == 1):
-    print("OPERAÇÃO ABORTADA SEM ERROS!")
+    print("OPERAÇÃO ABORTADA [REPOSITÓRIO INEXISTENTE]")
+elif(return_ == 2):
+    print("OPERAÇÂO ABORTADA [ERRO AO LOGAR]")
 else:
     # cria diretório
     mkdir = "mkdir "

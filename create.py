@@ -7,7 +7,6 @@ if (browser.get('http://github.com/login')):
     print("Carregou")
 
 
-
 def create_(username_, password_, reponame_):
     python_button = browser.find_elements_by_xpath("//input[@name='login']")[0]
     python_button.send_keys(username_)
@@ -18,6 +17,13 @@ def create_(username_, password_, reponame_):
         "//input[@name='commit']")[0]
     python_button.click()
 
+    # //*[@id="js-flash-container"]/div/div
+
+    if(browser.find_elements_by_xpath('//*[@id="js-flash-container"]/div/div')[0]):
+        # ERRO AO LOGAR
+        browser.quit()
+        return 2
+
     browser.get('https://github.com/new')
 
     python_button = browser.find_elements_by_xpath(
@@ -25,7 +31,7 @@ def create_(username_, password_, reponame_):
     python_button.send_keys(reponame_)
 
     if (browser.find_elements_by_xpath('//*[@id="new_repository"]/div[2]/auto-check/dl/dd[2]')[0]):
-        print("REPOSITÓRIO JÁ EXISTE!")
+        # REPOSITÓRIO JÁ EXISTE!
         browser.quit()
         return 1
     else:
