@@ -19,7 +19,7 @@ The following project was tested in DeepinOS and its code base was created in Ma
 >  
 * Download [Chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=75.0.3770.8/). (At the time of this update the current version is at 75.0.*)
 * Unzip and save to a new folder. ( `C:\Webdrivers` preferably ).
-* Set the path folder in the stem environment variables. ( `path` preferably ).
+* Set the path folder in the system environment variables. ( `path` preferably ).
 
 That said, let's go.
 
