@@ -58,8 +58,7 @@ I'm a small project that automates the creation of repositories on both the comp
     * `-c` to create bouth folder and repository
     * `-d` to delete bouth folder and repository
 
-Base code for this project in: [ProjectInitializationAutomation](https://github.com/KalleHallden/ProjectInitializationAutomation).
-
+Base code for this project in: [ProjectInitializationAutomation](https://github.com/KalleHallden/ProjectInitializationAutomation).  
 Made by: [KalleHallden](https://github.com/KalleHallden).
 
 `Made with ❤.`
