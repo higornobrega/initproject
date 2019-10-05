@@ -8,7 +8,8 @@ browser = webdriver.Chrome()
 browser.implicitly_wait(5)
 browser.get('http://github.com/login')
 
-caminho = '/home/bruno/Documents/Testes/'
+# coloque o caminho da pasta onde irá guardar seus projetos
+caminho = '/home/bruno/Documentos/Testes/'
 
 def login(username_, password_):
     try:
@@ -28,7 +29,6 @@ def login(username_, password_):
             browser.quit()
             return 2
     except:
-        #print("\n\nUsuário: {} Logado!\n\n".format(username_))
         return 1
 
 
@@ -69,10 +69,7 @@ def remove(reponame_):
         python_button = browser.find_elements_by_xpath('//*[@id="options_bucket"]/div[9]/ul/li[4]/details/details-dialog/div[3]/form/button')[0]
         python_button.click()
 
-        #browser.quit()
-
         delfolder(reponame_)
-
         browser.quit()
 
         return True # excluiu do github
@@ -117,7 +114,6 @@ def createonline (username_, password_, reponame_):
         python_button.send_keys(reponame_)
 
         python_button = browser.find_element_by_css_selector('button.first-in-line')
-        # //*[@id="new_repository"]/div[2]/auto-check/dl/dd[2]
         if(browser.find_elements_by_xpath('/*[@id="new_repository"]/div[2]/auto-check/dl/dd[2]')):
             print("repositório já existe!")
             browser.quit()
@@ -129,8 +125,6 @@ def createonline (username_, password_, reponame_):
 
 def ligaremoto(username_, reponame_):
     os.system("git commit -m 'initial commit'")
-    #os.system("git remote add origin git@github.com:" + username_ + "/" + reponame_ + ".git")
-    # git remote add origin git@github.com:silv4b/123.git
     os.system("git remote add origin git@github.com:{}/{}.git".format(username_, reponame_))
     os.system("git push -u origin master")
     browser.get("http://github.com/" + username_ + "/" + reponame_)
